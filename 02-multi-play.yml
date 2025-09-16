@@ -1,5 +1,5 @@
 ---
-- name: Update node1 servers
+- name: Update node1 server
   hosts: node1
   
   tasks:
@@ -13,7 +13,7 @@
         path: /home/ec2-user/new_dir_1
         state: directory
 
-name: Update node2 server
+- name: Update node2 server
   hosts: node2
   
   tasks:
@@ -27,7 +27,7 @@ name: Update node2 server
         path: /home/ec2-user/new_dir_2
         state: directory
 
-name: Update group servers
+- name: Update group servers
   hosts: g1
   
   tasks:
