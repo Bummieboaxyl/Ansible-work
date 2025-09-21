@@ -1,0 +1,11 @@
+---
+  - name: Update Static (Fixed) page
+    copy:
+      src: fixed.html
+      dest: /var/www/html/fixed.html
+
+  - name: Update Dynamic (Vary) page
+    template:
+      src: vary.j2
+      dest: /var/www/html/vary.html
+...

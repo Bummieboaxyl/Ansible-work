@@ -1,0 +1,38 @@
+---
+    - name: Install HTTP
+      yum:
+        name: httpd
+        state: present
+      when: ansible_distribution == "Amazon" or ansible_distribution == "CentOS"
+
+    - name: Start HTTP
+      service:
+        name: httpd
+        state: started
+      when: ansible_distribution == "Amazon" or ansible_distribution == "CentOS"
+
+    - name: Enable HTTP
+      service:
+        name: httpd
+        enabled: yes
+      when: ansible_distribution == "Amazon" or ansible_distribution == "CentOS"
+
+    - name: Install apache2
+      apt:
+        name: apache2
+        state: present
+      when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
+
+    - name: Start Apache2
+      service:
+        name: apache2
+        state: started
+      when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
+
+    - name: Enable Apache2
+      service:
+        name: apache2
+        enabled: yes
+      when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
+...
+
